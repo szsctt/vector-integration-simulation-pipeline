@@ -32,7 +32,7 @@ ADD run_singularity.sh /opt/simvi/run_singularity.sh
 
 # add test files
 ADD tests /opt/simvi/tests
-RUN mkdir -p /opt/simvi/test/out .snakemake
+RUN mkdir -p /opt/simvi/tests/out .snakemake
 
 WORKDIR /opt/simvi
 
