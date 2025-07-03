@@ -4,5 +4,5 @@ channels:
   - conda-forge
 dependencies:
   - bwa=0.7.17
-  - samtools=1.2
+  - samtools=1.21
   - bedtools=2.31
