@@ -5,5 +5,5 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - snakemake=5.27
+  - snakemake=7
 
