@@ -4,7 +4,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - biopython=1.76
+  - biopython=1.85
   - matplotlib=3.10
   - pandas=2.3
   - pandoc=2.9.2
