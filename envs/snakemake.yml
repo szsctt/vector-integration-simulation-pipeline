@@ -1,8 +1,6 @@
 name: snakemake
 channels:
   - bioconda
-  - r
-  - defaults
   - conda-forge
 dependencies:
   - snakemake=7
