@@ -235,7 +235,6 @@ class Events(dict):
 				
 		return lines
 		 
-	
 	def add_integrations(self, probs, int_num, max_attempts = 50, model_check = False, min_sep = 1):
 		"""
 		Add an Integrations object with int_num integrations, with types specified by probs,
@@ -255,7 +254,7 @@ class Events(dict):
 		self.model_check = model_check
 		
 		# can only add integrations once
-		if 'ints' in self:
+		if hasattr(self, 'ints'):
 			raise ValueError("integrations have already been added to this Events object") # is there a better error type for this?
 			
 		# check that the number of requested integrations will fit in the host, given the requested minimum separation
@@ -298,7 +297,7 @@ class Events(dict):
 			if prob not in prob_dict.keys():
 				raise ValueError(f"probs dictionary must contain key '{prob}'")
 
-	def add_episomes(self, probs, epi_num, max_attepmts = 50):
+	def add_episomes(self, probs, epi_num, max_attempts = 50):
 		"""
 		Add an Integrations object with int_num integrations, with types specified by probs,
 		to self
@@ -308,9 +307,8 @@ class Events(dict):
 		assert isinstance(epi_num, int)
 		assert max_attempts > 0
 		assert epi_num >= 0
-		
 		# can only add episomes once
-		if 'epis' in self:
+		if hasattr(self, 'epis'):
 			raise ValueError("episomes have already been added to this Events object")
 			
 		# we require that the minimum length of integrations is longer than the integrated virus
@@ -330,7 +328,6 @@ class Events(dict):
 				counter += 1
 			if counter > max_attempts:
 				raise ValueError('too many failed attempts to add episomes')
-
 			
 	def checkFastaExists(self, file):
 		#check file exists
