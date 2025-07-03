@@ -1,0 +1,6 @@
+name: visim_test
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - pytest=7.4
