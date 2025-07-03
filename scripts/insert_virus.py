@@ -25,16 +25,11 @@
 
 ###import libraries
 from Bio import SeqIO
-from Bio.Alphabet.IUPAC import unambiguous_dna
-from Bio.Seq import Seq 
-from Bio.SeqRecord import SeqRecord
 from scipy.stats import poisson
-import pandas as pd
 import argparse
 from sys import argv
 from os import path
 import numpy as np
-import scipy
 import csv
 import re
 import pprint
@@ -164,7 +159,7 @@ class Events(dict):
 	
 		# read host fasta - use index which doesn't load sequences into memory because host is large genome
 		if self.checkFastaExists(host_fasta_path):
-			self.host = SeqIO.to_dict(SeqIO.parse(host_fasta_path, 'fasta', alphabet=unambiguous_dna))
+			self.host = SeqIO.to_dict(SeqIO.parse(host_fasta_path, 'fasta'))
 		else:
 			raise OSError("Could not open host fasta")
 		
@@ -176,7 +171,7 @@ class Events(dict):
 	
 		# read virus fasta -  make dictionary in memory of sequences
 		if self.checkFastaExists(virus_fasta_path):
-			self.virus = SeqIO.to_dict(SeqIO.parse(virus_fasta_path, 'fasta', alphabet=unambiguous_dna))
+			self.virus = SeqIO.to_dict(SeqIO.parse(virus_fasta_path, 'fasta'))
 			# convert all viral sequences to upper case to make it easier to check output
 			for this_virus in self.virus.values():
 				this_virus.seq = this_virus.seq.upper()
