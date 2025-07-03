@@ -31,9 +31,9 @@ ADD Snakefile /opt/simvi/Snakefile
 ADD run_singularity.sh /opt/simvi/run_singularity.sh
 
 # add test files
-ADD test /opt/simvi/test
+ADD tests /opt/simvi/tests
 RUN mkdir /opt/simvi/test/out .snakemake
 
 WORKDIR /opt/simvi
 
-CMD test/runMe.sh
+CMD tests/snakemake/runMe.sh
