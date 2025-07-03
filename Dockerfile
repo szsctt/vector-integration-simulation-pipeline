@@ -19,7 +19,7 @@ RUN export DEBIAN_FRONTEND
 # install conda stuff
 ADD scripts/consolidate_envs.py /opt/simvi/scripts/
 ADD envs /opt/simvi/envs/
-RUN micromamba install -n base -c anaconda pip pyyaml=5.3 python=3.11 -y &&\
+RUN micromamba install -n base -c anaconda pip pyyaml=6 python=3.11 -y &&\
 	/opt/conda/bin/python3 /opt/simvi/scripts/consolidate_envs.py /opt/simvi/envs/*yml /opt/simvi/envs/simvi.yml &&\
 	micromamba env update -n base -f /opt/simvi/envs/simvi.yml -y &&\
 	micromamba clean --all -y 	
