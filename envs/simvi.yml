@@ -10,6 +10,6 @@ dependencies:
   - pandoc=2.9.2
   - python=3.11
   - seaborn=0.10
-  - pysam=0.23
+  - pysam=0.23.3
   - scipy=1.16
   - pytest
