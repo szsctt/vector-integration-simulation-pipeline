@@ -1,6 +1,6 @@
 # Dockerfile for viral integration simulation pipeline
 
-FROM mambaorg/micromamba:0.19.1
+FROM mambaorg/micromamba:2.3.0-ubuntu24.04
 
 USER root
 
